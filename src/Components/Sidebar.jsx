@@ -10,22 +10,22 @@ const Sidebar = async() => {
 
    const user = await getUserSession();
 
-    const collabratorNavLinks = [
+    const founderNavLinks = [
         { icon: House, href: "/dashboard/founder", label: "Home" },
-        { icon: Magnifier, href: "/dashboard/recruiter/jobs", label: "Jobs" },
-        { icon: Bell, href: "/dashboard/recruiter/jobs/new", label: "Post A Job" },
-        { icon: Briefcase, href: "/dashboard/recruiter/company", label: "Company Profile" },
+        { icon: Magnifier, href: "/dashboard/founder/jobs", label: "Jobs" },
+        { icon: Bell, href: "/dashboard/founder/jobs/new", label: "Post A Job" },
+        { icon: Briefcase, href: "/dashboard/founder/company", label: "Company Profile" },
         { icon: Envelope, href: "/messages", label: "Messages" },
         { icon: Person, href: "/profile", label: "Profile" },
         { icon: Gear, href: "/settings", label: "Settings" },
     ]
 
-    const founderNavLinks = [
-        { icon: House, href: "/dashboard/seeker", label: "Dashboard" },
-        { icon: Magnifier, href: "/dashboard/seeker/jobs", label: "Jobs" },
-        { icon: Bookmark, href: "/dashboard/seeker/saved-jobs", label: "Saved Jobs" },
-        { icon: FileText, href: "/dashboard/seeker/applications", label: "Applications" },
-        { icon: CreditCard, href: "/dashboard/seeker/billing", label: "Billing" },
+    const collabratorNavLinks = [
+        { icon: House, href: "/dashboard/collabrator", label: "Dashboard" },
+        { icon: Magnifier, href: "/dashboard/collabrator/jobs", label: "Jobs" },
+        { icon: Bookmark, href: "/dashboard/collabrator/saved-jobs", label: "Saved Jobs" },
+        { icon: FileText, href: "/dashboard/collabrator/applications", label: "Applications" },
+        { icon: CreditCard, href: "/dashboard/collabrator/billing", label: "Billing" },
         { icon: Gear, href: "/settings", label: "Settings" },
     ];
 
