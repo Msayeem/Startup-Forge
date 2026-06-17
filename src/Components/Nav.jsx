@@ -13,7 +13,7 @@ const Nav = () => {
                     <Link href={'/'}>Home</Link>
                     <Link href={'/'}>Browse Startups</Link>
                     <Link href={'/'}>Browse Oppurtunities</Link>
-                    <Link href={'/'}>Login</Link>
+                    <Link href={'/login'}>Login</Link>
                 </div>
             </nav>
         </div>
