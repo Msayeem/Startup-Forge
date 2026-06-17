@@ -14,4 +14,17 @@ export const auth = betterAuth({
    emailAndPassword: { 
     enabled: true, 
   }, 
+
+     user: {
+       additionalFields: {
+          role: {
+              role:"collabrator"
+            },
+            
+              plan:{
+default:'collabrator_free'
+              },
+            
+        }
+    },
 });
