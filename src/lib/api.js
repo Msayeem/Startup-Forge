@@ -62,3 +62,26 @@ export const getOpportunities=async()=>{
     });
 return res.json()
 }
+
+
+export const postApplication=async(applicationData)=>{
+       const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/applications`,{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json',
+            // ...await authHeader()
+        },
+        body:JSON.stringify(applicationData)
+    });
+
+    return res.json()
+}
+
+
+
+export const getApplication=async(userId)=>{
+ const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/applications?userId=${userId}`, {
+      cache:'no-store'
+    });
+    return res.json()
+}
