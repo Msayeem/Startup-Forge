@@ -32,9 +32,11 @@ const ApplyForm = ({opportunity, user}) => {
             opportunityId: opportunity?._id,
             roleTitle: opportunity?.roleTitle,
             opportunityName: opportunity?.opportunityName,
+                workType:opportunity?.workType,
             applicantId: user?.id,
             applicantName: user?.name,
             applicantEmail: user?.email,
+        
             status:"pending",
             ...formData
         };
