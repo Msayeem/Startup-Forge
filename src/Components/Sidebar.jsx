@@ -12,12 +12,11 @@ const Sidebar = async() => {
 
     const founderNavLinks = [
         { icon: House, href: "/dashboard/founder", label: "Home" },
-        { icon: Magnifier, href: "/dashboard/founder/jobs", label: "Jobs" },
+        { icon: Magnifier, href: "/dashboard/founder/opportunities", label: "Opportunities" },
         { icon: Bell, href: "/dashboard/founder/jobs/new", label: "Post A Job" },
         { icon: Briefcase, href: "/dashboard/founder/startup", label: "My Startup" },
         { icon: Envelope, href: "/messages", label: "Messages" },
-        { icon: Person, href: "/profile", label: "Profile" },
-        { icon: Gear, href: "/settings", label: "Settings" },
+    
     ]
 
     const collabratorNavLinks = [

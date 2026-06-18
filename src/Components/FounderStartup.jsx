@@ -2,7 +2,9 @@
 import { createStartup, uploadImageToImgBB } from '@/lib/api';
 import { Envelope } from '@gravity-ui/icons';
 import { Button, Select, Description, FieldError, Label, ListBox, Modal, TextArea, TextField, Surface, Input } from '@heroui/react';
+import { useRouter } from 'next/navigation';
 import React, { useCallback, useRef, useState } from 'react';
+import toast from 'react-hot-toast';
 
 const FounderStartup = ({user}) => {
 
@@ -10,6 +12,8 @@ const [dragActive, setDragActive] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
   const [uploadError, setUploadError] = useState("");
   const inputRef = useRef(null);
+
+  const router=useRouter();
 
   const handleFile = (file) => {
     setUploadError("");
@@ -74,20 +78,22 @@ const onSubmit = async (e) => {
     startup.status='pending'
     startup.founderId=user?.id;
 
-    const postStartup = await createStartup(company);
+    const postStartup = await createStartup(startup);
     
 
   } catch (err) {
     console.error('Failed to create startup:', err.message);
   } finally {
     setIsLoading(false);
+    toast.success('Startup created sucessfully!');
+    router.refresh();
   }
 };
 
     return (
         <div>
             <Modal>
-        <Button variant="secondary">Create Company</Button>
+        <Button variant="secondary">Create Startup</Button>
         <Modal.Backdrop>
           <Modal.Container placement="auto">
             <Modal.Dialog className="sm:max-w-md flex flex-col max-h-[90vh]">
@@ -96,7 +102,7 @@ const onSubmit = async (e) => {
                 <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
                   <Envelope className="size-5" />
                 </Modal.Icon>
-                <Modal.Heading>Create Company</Modal.Heading>
+                <Modal.Heading>Create Startup</Modal.Heading>
                 <p className="mt-1.5 text-sm leading-5 text-muted">
                   Fill out the form below and we'll get back to you. The modal adapts automatically
                   when the keyboard appears on mobile.
@@ -106,10 +112,10 @@ const onSubmit = async (e) => {
                 <Surface variant="default">
                   <form onSubmit={onSubmit} className="flex flex-col gap-4">
 
-<div className="flex">
-                    <TextField className="w-full" name="company_name" type="text" variant="secondary">
-                      <Label>Company Name</Label>
-                      <Input placeholder="Enter Company name" />
+<div className="flex items-center gap-3">
+                    <TextField className="w-full" name="startup_name" type="text" variant="secondary">
+                      <Label>Startup Name</Label>
+                      <Input placeholder="Enter Startup name" />
                     </TextField>
 
                     <Select className="w-full" name="industry" placeholder="Select one">
@@ -140,27 +146,40 @@ const onSubmit = async (e) => {
                     </TextField>
 
                    <div className="flex">
-                     <TextField className="w-full" name="location" type="text" variant="secondary">
-                      <Label>Location</Label>
-                      <Input placeholder="City, Country" />
-                    </TextField>
+                  
 
-                    <Select className="w-full" name="employee_count" placeholder="Select one">
-                      <Label>Employee Count Range</Label>
+                    <Select className="w-full" name="funding_stage" placeholder="Select one">
+                      <Label>Funding Stage</Label>
                       <Select.Trigger>
                         <Select.Value />
                         <Select.Indicator />
                       </Select.Trigger>
                       <Select.Popover>
                         <ListBox>
-                          <ListBox.Item id="1-10" textValue="1–10 (Solo / Micro)">1–10 (Solo / Micro)<ListBox.ItemIndicator /></ListBox.Item>
-                          <ListBox.Item id="11-50" textValue="11–50 (Small)">11–50 (Small)<ListBox.ItemIndicator /></ListBox.Item>
-                          <ListBox.Item id="51-200" textValue="51–200 (Mid-size)">51–200 (Mid-size)<ListBox.ItemIndicator /></ListBox.Item>
-                          <ListBox.Item id="201-500" textValue="201–500">201–500<ListBox.ItemIndicator /></ListBox.Item>
-                          <ListBox.Item id="501-1000" textValue="501–1,000">501–1,000<ListBox.ItemIndicator /></ListBox.Item>
-                          <ListBox.Item id="1001-5000" textValue="1,001–5,000">1,001–5,000<ListBox.ItemIndicator /></ListBox.Item>
-                          <ListBox.Item id="5000+" textValue="5,000+ (Enterprise)">5,000+ (Enterprise)<ListBox.ItemIndicator /></ListBox.Item>
-                        </ListBox>
+  <ListBox.Item id="pre-seed" textValue="Idea / Pre-Seed">
+    Idea / Pre-Seed <ListBox.ItemIndicator />
+  </ListBox.Item>
+
+  <ListBox.Item id="bootstrapped" textValue="Bootstrapped / Self-Funded">
+    Bootstrapped / Self-Funded <ListBox.ItemIndicator />
+  </ListBox.Item>
+
+  <ListBox.Item id="seed" textValue="Seed">
+    Seed <ListBox.ItemIndicator />
+  </ListBox.Item>
+
+  <ListBox.Item id="series-a" textValue="Series A">
+    Series A <ListBox.ItemIndicator />
+  </ListBox.Item>
+
+  <ListBox.Item id="growth-stage" textValue="Series B & Beyond (Growth Stage)">
+    Series B & Beyond (Growth Stage) <ListBox.ItemIndicator />
+  </ListBox.Item>
+
+  <ListBox.Item id="late-stage" textValue="Late Stage / Public">
+    Late Stage / Public <ListBox.ItemIndicator />
+  </ListBox.Item>
+</ListBox>
                       </Select.Popover>
                     </Select>
                    </div>
@@ -252,7 +271,7 @@ const onSubmit = async (e) => {
                       }}
                     >
                       <Label>Brief Description</Label>
-                      <TextArea placeholder="Tell us about your company's mission and culture..." />
+                      <TextArea placeholder="Tell us about your startup's mission..." />
                       <Description>Minimum 10 characters</Description>
                       <FieldError />
                     </TextField>

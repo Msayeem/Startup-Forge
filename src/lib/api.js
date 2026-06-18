@@ -21,7 +21,7 @@ export const uploadImageToImgBB = async (file) => {
 
 
 export const createStartup=async(startup)=>{
-  const res=await fetch(`${process.env.SERVER_URL}/startups`,{
+  const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/startups`,{
         method:'POST',
         headers:{
             'Content-Type':'application/json',
@@ -31,4 +31,34 @@ export const createStartup=async(startup)=>{
     });
 
     return res.json()
+}
+
+
+
+export const getFounderStartup=async(founderId)=>{
+  const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my/startups?founderId=${founderId}`);
+  return res.json()
+}
+
+
+
+export const createOpportunity=async(newOpportunityData)=>{
+
+  const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities`, {
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify(newOpportunityData)
+  });
+  return res.json()
+}
+
+
+
+export const getOpportunities=async()=>{
+    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities`, {
+      cache:'no-store'
+    });
+return res.json()
 }

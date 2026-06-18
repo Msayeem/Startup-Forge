@@ -20,7 +20,7 @@ const user=session?.user;
                     <Link href={'/'}>Home</Link>
                     {user && <Link href={`/dashboard/${user?.role}`}>Dashboard</Link>}
                     <Link href={'/'}>Startups</Link>
-                    <Link href={'/'}>Oppurtunities</Link>
+                    <Link href={'/opportunities'}>Oppurtunities</Link>
                      {user && <div className="flex items-center gap-3">  <h1>{user?.name}</h1>
         <Avatar className="rounded-lg">
         <Avatar.Image
