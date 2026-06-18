@@ -4,11 +4,16 @@ import React from 'react';
 
 const OpportunitiesPage = async() => {
 
-const opportunities=await getOpportunities()
+const opportunitiess=await getOpportunities()
 
     return (
         <div>
-            <BrowseOpportunities opportunities={opportunities}></BrowseOpportunities>
+            {
+                opportunitiess.map(opportunities=>
+                                <BrowseOpportunities key={opportunities._id} opportunities={opportunities}></BrowseOpportunities>
+
+                )
+            }
         </div>
     );
 };
