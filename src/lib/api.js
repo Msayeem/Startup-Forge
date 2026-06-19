@@ -64,6 +64,14 @@ return res.json()
 }
 
 
+export const getFounderOpportunities=async(founderId)=>{
+ const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities?founderId=${founderId}`, {
+      cache:'no-store'
+    });
+    return res.json()
+}
+
+
 export const postApplication=async(applicationData)=>{
        const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/applications`,{
         method:'POST',
