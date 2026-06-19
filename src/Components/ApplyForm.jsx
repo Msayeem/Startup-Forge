@@ -32,6 +32,7 @@ const ApplyForm = ({opportunity, user}) => {
             opportunityId: opportunity?._id,
             roleTitle: opportunity?.roleTitle,
             opportunityName: opportunity?.opportunityName,
+            founderId:opportunity.founderId,
                 workType:opportunity?.workType,
             applicantId: user?.id,
             applicantName: user?.name,

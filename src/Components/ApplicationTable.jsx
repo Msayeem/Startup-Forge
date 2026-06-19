@@ -31,8 +31,8 @@ const getStatusChip = (status = "Applied") => {
       return <Chip variant="bordered" className="border-emerald-600/70 text-emerald-500 text-xs font-medium px-3 py-1 bg-emerald-950/20">Shortlisted</Chip>;
     case 'rejected':
       return <Chip variant="bordered" className="border-rose-700/70 text-rose-600 text-xs font-medium px-3 py-1 bg-rose-950/20">Rejected</Chip>;
-    case 'accept':
-      return <Chip variant="bordered" className="border-zinc-400 text-zinc-200 text-xs font-medium px-3 py-1">Accepted</Chip>;
+    case 'approved':
+      return <Chip variant="bordered" className="border-zinc-400 bg-green-200 text-xs font-medium px-3 py-1">Accepted</Chip>;
     default:
       return <Chip variant="bordered" className="border-zinc-600 text-zinc-400 text-xs font-medium">{status}</Chip>;
   }

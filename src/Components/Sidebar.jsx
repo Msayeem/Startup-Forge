@@ -15,16 +15,15 @@ const Sidebar = async() => {
         { icon: Magnifier, href: "/dashboard/founder/opportunities", label: "Opportunities" },
         { icon: Bell, href: "/dashboard/founder/jobs/new", label: "Post A Job" },
         { icon: Briefcase, href: "/dashboard/founder/startup", label: "My Startup" },
-        { icon: Envelope, href: "/messages", label: "Messages" },
+        { icon: Envelope, href: "/dashboard/founder/applications", label: "Applications" },
     
     ]
 
     const collabratorNavLinks = [
         { icon: House, href: "/dashboard/collabrator", label: "Dashboard" },
-        { icon: Magnifier, href: "/dashboard/collabrator/jobs", label: "Jobs" },
-        { icon: Bookmark, href: "/dashboard/collabrator/saved-jobs", label: "Saved Jobs" },
+        { icon: Magnifier, href: "/opportunities", label: "Opportunities" },
         { icon: FileText, href: "/dashboard/collabrator/applications", label: "Applications" },
-        { icon: CreditCard, href: "/dashboard/collabrator/billing", label: "Billing" },
+        { icon: CreditCard, href: "/plans", label: "Plans" },
         { icon: Gear, href: "/settings", label: "Settings" },
     ];
 

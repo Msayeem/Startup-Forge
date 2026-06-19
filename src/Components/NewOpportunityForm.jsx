@@ -51,6 +51,7 @@ const NewOpportunityForm = ({ startup }) => {
             opportunityId: startup._id,
             opportunityName: startup.startup_name,
             companyLogo: startup.logo_url,
+            founderId:startup.founderId,
             status: "active",
             isPubliclyVisible: true,
         };

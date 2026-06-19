@@ -85,3 +85,24 @@ export const getApplication=async(userId)=>{
     });
     return res.json()
 }
+
+
+
+export const getFounderApplication=async(founderId)=>{
+ const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/applications?founderId=${founderId}`, {
+      cache:'no-store'
+    });
+    return res.json()
+}
+
+
+export const updateFounderApplication=async(id, data)=>{
+ const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/applications/${id}`, {
+      method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    });
+    return res.json();
+}
