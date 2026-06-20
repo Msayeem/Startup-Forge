@@ -11,9 +11,9 @@ const Sidebar = async() => {
    const user = await getUserSession();
 
     const founderNavLinks = [
-        { icon: House, href: "/dashboard/founder", label: "Home" },
+        { icon: House, href: "/dashboard/founder", label: "Overview" },
         { icon: Magnifier, href: "/dashboard/founder/opportunities", label: "Opportunities" },
-        { icon: Bell, href: "/dashboard/founder/jobs/new", label: "Post A Job" },
+        { icon: Bell, href: "/dashboard/founder/manage-opportunity", label: "Manage Opportunities" },
         { icon: Briefcase, href: "/dashboard/founder/startup", label: "My Startup" },
         { icon: Envelope, href: "/dashboard/founder/applications", label: "Applications" },
     

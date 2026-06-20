@@ -7,12 +7,20 @@ const FounderOpportunity = async() => {
 
 const user=await getUserSession();
 
-const startup=await getFounderStartup(user?.id)
-console.log(startup)
+let startup=null
+
+try{ startup=await getFounderStartup(user?.id)}
+catch (error) {
+    console.error("Failed to fetch startup data safely:", error);
+  }
 
     return (
         <div>
-            <NewOpportunityForm startup={startup}></NewOpportunityForm>
+            {
+                startup ?             <NewOpportunityForm startup={startup}></NewOpportunityForm>
+:
+<h1>Create a startup to post opportunity</h1>
+            }
         </div>
     );
 };
