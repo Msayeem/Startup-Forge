@@ -7,7 +7,7 @@ const notFoundPage = () => {
          <div className='text-2xl text-center'>
             <h1>404 <br /> Page not Found!</h1>
             <br />
-            <Link className='font-semibold bg-green-600 text-white px-8 py-3 rounded-2xl' href={'/'}>Go Home</Link>
+            <Link className='font-semibold bg-blue-600 text-white px-8 py-3 rounded-2xl' href={'/'}>Go Home</Link>
         </div>
        </div>
     );
