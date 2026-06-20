@@ -12,7 +12,7 @@ const Sidebar = async() => {
 
     const founderNavLinks = [
         { icon: House, href: "/dashboard/founder", label: "Overview" },
-        { icon: Magnifier, href: "/dashboard/founder/opportunities", label: "Opportunities" },
+        { icon: Magnifier, href: "/dashboard/founder/opportunities", label: "Post Opportunities" },
         { icon: Bell, href: "/dashboard/founder/manage-opportunity", label: "Manage Opportunities" },
         { icon: Briefcase, href: "/dashboard/founder/startup", label: "My Startup" },
         { icon: Envelope, href: "/dashboard/founder/applications", label: "Applications" },

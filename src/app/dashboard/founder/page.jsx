@@ -5,8 +5,11 @@ import React from 'react';
 const FounderDashboard = async() => {
 
 const user=await getUserSession();
+
 const opportunities=await getFounderOpportunities(user.id);
+
 const applications=await getFounderApplication(user.id);
+
 const acceptedCount=applications.filter(app=>app.status=='approved').length;
 
 

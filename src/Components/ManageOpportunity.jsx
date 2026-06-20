@@ -60,7 +60,7 @@ const [errors, setErrors] = useState({});
 const result=await res.json()
 
         if (res.ok) {
-            toast.success("Opportunity posted successfully!");
+            toast.success("Opportunity updated successfully!");
             router.refresh();
             setIsUpdateOpen(false);
         }
