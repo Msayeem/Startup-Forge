@@ -64,6 +64,23 @@ return res.json()
 }
 
 
+
+export const getUsers=async()=>{
+    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users`, {
+      cache:'no-store'
+    });
+return res.json()
+}
+
+
+export const getStartups=async()=>{
+    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/startups`, {
+      cache:'no-store'
+    });
+return res.json()
+}
+
+
 export const getFounderOpportunities=async(founderId)=>{
  const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities?founderId=${founderId}`, {
       cache:'no-store'
@@ -106,6 +123,18 @@ export const getFounderApplication=async(founderId)=>{
 
 export const updateFounderApplication=async(id, data)=>{
  const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/applications/${id}`, {
+      method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    });
+    return res.json();
+}
+
+
+export const updateUser=async(id, data)=>{
+ const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/${id}`, {
       method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',

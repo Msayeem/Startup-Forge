@@ -1,6 +1,9 @@
+import { getUserSession } from "@/lib/session";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  const user=await getUserSession();
+  console.log(user)
   return (
  <div>
   

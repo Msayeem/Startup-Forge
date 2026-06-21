@@ -24,6 +24,10 @@ export const auth = betterAuth({
               plan:{
 default:'collabrator_free'
               },
+
+              status:{
+                status:"active"
+              }
             
         }
     },

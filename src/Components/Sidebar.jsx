@@ -29,7 +29,7 @@ const Sidebar = async() => {
 
     const adminNavLinks = [
         { icon: House, href: "/dashboard/admin", label: "Dashboard" },
-        { icon: Users, href: "/dashboard/admin/users", label: "Users" },
+        { icon: Users, href: "/dashboard/admin/manage-users", label: "Manage Users" },
         { icon: Building, href: "/dashboard/admin/companies", label: "Companies" },
         { icon: Briefcase, href: "/dashboard/admin/jobs", label: "Jobs" },
         { icon: CreditCard, href: "/dashboard/admin/payments", label: "Payments" },

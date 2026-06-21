@@ -27,6 +27,7 @@ const router=useRouter();
       password: user.password,
       role: role,
       plan,
+      status:"active",
       rememberMe: true,
  
     });
