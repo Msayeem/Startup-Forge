@@ -114,3 +114,23 @@ export const updateFounderApplication=async(id, data)=>{
     });
     return res.json();
 }
+
+
+export const getPlanById=async(planId)=>{
+ const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/plans?plan_id=${planId}`);
+ return res.json()
+}
+
+
+export const createSubscription=async(subInfo)=>{
+    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/subscriptions`,{
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json',
+           
+        },
+        body:JSON.stringify(subInfo)
+    });
+
+    return res.json()
+}
