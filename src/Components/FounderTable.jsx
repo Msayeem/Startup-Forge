@@ -6,18 +6,24 @@ import { Table, Button } from '@heroui/react';
 import { CircleArrowDownFill } from '@gravity-ui/icons';
 import { authClient } from '@/lib/auth-client';
 import { updateFounderApplication } from '@/lib/api';
+import { useRouter } from 'next/navigation';
 
 const FounderTable = ({ applications }) => {
+
+const router=useRouter();
+
     const { data: session } = authClient.useSession();
     
     const handleApprove = async (id) => {
         // const token = session?.session?.token;
         const result = await updateFounderApplication(id, { status: 'approved' });
+    router.refresh()
     };
 
     const handleReject = async (id) => {
         // const token = session?.session?.token;
         const result = await updateFounderApplication(id, { status: 'rejected' });
+    router.refresh()
     };
 
     // Helper to format date cleanly like "Oct 12, 2023"

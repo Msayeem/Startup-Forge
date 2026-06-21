@@ -100,7 +100,7 @@ const NewOpportunityForm = ({ startup }) => {
 
                 }
                 {
-                    startup.status == 'pending' &&
+                    startup.status == 'approved' &&
                     <Form onSubmit={handleSubmit} className="space-y-8" validationErrors={errors} validationBehavior='aria'>
 
                         {/* SECTION 1: Job Information */}

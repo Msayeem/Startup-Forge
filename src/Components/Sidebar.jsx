@@ -23,17 +23,17 @@ const Sidebar = async() => {
         { icon: House, href: "/dashboard/collabrator", label: "Dashboard" },
         { icon: Magnifier, href: "/opportunities", label: "Opportunities" },
         { icon: FileText, href: "/dashboard/collabrator/applications", label: "Applications" },
-        { icon: CreditCard, href: "/plans", label: "Plans" },
-        { icon: Gear, href: "/settings", label: "Settings" },
+
+        { icon: Person, href: "/settings", label: "Profile" },
     ];
 
     const adminNavLinks = [
-        { icon: House, href: "/dashboard/admin", label: "Dashboard" },
+        { icon: House, href: "/dashboard/admin", label: "Overview" },
         { icon: Users, href: "/dashboard/admin/manage-users", label: "Manage Users" },
-        { icon: Building, href: "/dashboard/admin/companies", label: "Companies" },
-        { icon: Briefcase, href: "/dashboard/admin/jobs", label: "Jobs" },
-        { icon: CreditCard, href: "/dashboard/admin/payments", label: "Payments" },
-        { icon: Gear, href: "/dashboard/admin/settings", label: "Settings" },
+        { icon: Building, href: "/dashboard/admin/manage-startups", label: "Manage Startups" },
+
+        { icon: CreditCard, href: "/dashboard/admin/transactions", label: "Transactions" },
+
     ];
 
     const navLinksMap = {

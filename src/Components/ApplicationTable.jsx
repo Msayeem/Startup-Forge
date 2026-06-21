@@ -97,7 +97,7 @@ console.log(application)
 
                 {/* WORK TYPE COLUMN */}
                 <Table.Cell>
-                  <span className="text-zinc-600 dark:text-zinc-400 text-[14px]">{workType}</span>
+                  <span className="text-zinc-600 dark:text-zinc-400 text-[14px] capitalize">{workType}</span>
                 </Table.Cell>
 
                 {/* APPLIED DATE COLUMN */}
