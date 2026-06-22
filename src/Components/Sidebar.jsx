@@ -16,9 +16,9 @@ const Sidebar = async() => {
     ];
 
     const collabratorNavLinks = [
-        { icon: House, href: "/dashboard/collabrator", label: "Dashboard" },
+        { icon: House, href: "/dashboard/collaborator", label: "Dashboard" },
         { icon: Magnifier, href: "/opportunities", label: "Opportunities" },
-        { icon: FileText, href: "/dashboard/collabrator/applications", label: "Applications" },
+        { icon: FileText, href: "/dashboard/collaborator/applications", label: "Applications" },
         { icon: Person, href: "/settings", label: "Profile" },
     ];
 
@@ -30,12 +30,12 @@ const Sidebar = async() => {
     ];
 
     const navLinksMap = {
-        collabrator: collabratorNavLinks,
+        collaborator: collabratorNavLinks,
         founder: founderNavLinks,
         admin: adminNavLinks
     };
 
-    const currentRole = user?.role || 'collabrator';
+    const currentRole = user?.role || 'collaborator';
     const navItems = navLinksMap[currentRole];
 
     const navContent = (

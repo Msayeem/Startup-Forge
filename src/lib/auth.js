@@ -18,11 +18,11 @@ export const auth = betterAuth({
      user: {
        additionalFields: {
           role: {
-              role:"collabrator"
+              role:"collaborator"
             },
             
               plan:{
-default:'collabrator_free'
+default:'collaborator_free'
               },
 
               status:{

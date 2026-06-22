@@ -9,7 +9,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 
 const SignUpPage = () => {
-  const [role, setRole] = useState('collabrator');
+  const [role, setRole] = useState('collaborator');
   const [dragActive, setDragActive] = useState(false);
   const [uploadedFile, setUploadedFile] = useState(null);
   const [uploadError, setUploadError] = useState('');
@@ -64,7 +64,7 @@ const SignUpPage = () => {
       }
     }
 
-    const plan = role === 'collabrator' ? 'collabrator_free' : 'founder_free';
+    const plan = role === 'collaborator' ? 'collaborator_free' : 'founder_free';
 
     const { error } = await authClient.signUp.email({
       name: user.name,
@@ -199,11 +199,11 @@ const SignUpPage = () => {
 
           <div className="flex flex-col gap-4">
             <Label>Select Role</Label>
-            <RadioGroup defaultValue="collabrator" name="role" orientation="horizontal" onChange={value => setRole(value)}>
-              <Radio value="collabrator">
+            <RadioGroup defaultValue="collaborator" name="role" orientation="horizontal" onChange={value => setRole(value)}>
+              <Radio value="collaborator">
                 <Radio.Control><Radio.Indicator /></Radio.Control>
                 <Radio.Content>
-                  <Label>Collabrator</Label>
+                  <Label>Collaborator</Label>
                   <Description>For side projects</Description>
                 </Radio.Content>
               </Radio>

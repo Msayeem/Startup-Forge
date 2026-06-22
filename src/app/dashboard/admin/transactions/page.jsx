@@ -7,7 +7,7 @@ const TransactionsPage = async() => {
 
 
 const users=await getUsers();
-const user=users.filter(usa=> usa.plan!=="founder_free" && usa.plan !== "collabrator_free")
+const user=users.filter(usa=> usa.plan!=="founder_free" && usa.plan !== "collaborator_free")
 console.log(user)
     return (
         <div>
