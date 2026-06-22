@@ -1,5 +1,6 @@
 import BrowseOpportunities from '@/Components/BrowseOpportunities';
-import { getOpportunities } from '@/lib/api';
+import { getOpportunities } from '@/lib/api-server';
+
 import React from 'react';
 
 const OpportunitiesPage = async() => {

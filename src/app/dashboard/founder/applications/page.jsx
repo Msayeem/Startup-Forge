@@ -1,5 +1,5 @@
 import FounderTable from '@/Components/FounderTable';
-import { getFounderApplication } from '@/lib/api';
+import { getFounderApplication } from '@/lib/api-server';
 import { getUserSession } from '@/lib/session';
 import React from 'react';
 

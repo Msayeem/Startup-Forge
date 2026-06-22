@@ -1,4 +1,4 @@
-import { getOpportunities, getStartups, getUsers } from '@/lib/api';
+import { getOpportunities, getStartups, getUsers } from '@/lib/api-server';
 import React from 'react';
 
 const AdminPage = async() => {

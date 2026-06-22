@@ -1,3 +1,4 @@
+import { getUserToken } from '@/lib/session';
 import { CircleDollar } from '@gravity-ui/icons';
 import { ArrowUpRight, Briefcase, Calendar, GitCommitHorizontal } from 'lucide-react';
 import Link from 'next/link';
@@ -5,8 +6,13 @@ import React from 'react';
 
 const OpportunityDetails = async({params}) => {
 
+    const token=await getUserToken();
     const {id} = await params;
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities/${id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities/${id}`,{
+          headers: {
+      ...(token && { Authorization: `Bearer ${token}` }),
+    },
+    });
     const opportunity = await res.json();
 
     if (!opportunity) {

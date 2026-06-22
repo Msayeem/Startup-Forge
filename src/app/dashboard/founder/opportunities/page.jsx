@@ -1,5 +1,5 @@
 import NewOpportunityForm from '@/Components/NewOpportunityForm';
-import { getFounderOpportunities, getFounderStartup, getPlanById } from '@/lib/api';
+import { getFounderOpportunities, getFounderStartup, getPlanById } from '@/lib/api-server';
 import { getUserSession } from '@/lib/session';
 import Link from 'next/link';
 import React from 'react';

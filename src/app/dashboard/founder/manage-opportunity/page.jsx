@@ -1,5 +1,5 @@
 import ManageOpportunity from '@/Components/ManageOpportunity';
-import { getFounderOpportunities } from '@/lib/api';
+import { getFounderOpportunities } from '@/lib/api-server';
 import { getUserSession } from '@/lib/session';
 import React from 'react';
 

@@ -1,6 +1,7 @@
 "use client"
 
 import { updateStartup } from '@/lib/api';
+import { authClient } from '@/lib/auth-client';
 import { CircleArrowDownFill } from '@gravity-ui/icons';
 import { Button, Table } from '@heroui/react';
 import { useRouter } from 'next/navigation';
@@ -8,17 +9,19 @@ import React from 'react';
 
 const AdminStartup = ({user}) => {
 
+    const { data: session } = authClient.useSession();
+
     const router=useRouter();
 
    const handleApprove = async (id) => {
-     
-        const result=await updateStartup(id, {status:'approved'})
+     const token = session?.session?.token;
+        const result=await updateStartup(id, {status:'approved'}, token)
 router.refresh()
     };
 
     const handleReject = async (id) => {
-             
-        const result=await updateStartup(id, {status:'rejected'})
+             const token = session?.session?.token;
+        const result=await updateStartup(id, {status:'rejected'}, token)
     router.refresh()
     };
 

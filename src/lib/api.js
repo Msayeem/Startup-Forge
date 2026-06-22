@@ -1,3 +1,5 @@
+
+
 export const uploadImageToImgBB = async (file) => {
   const formData = new FormData();
   formData.append("image", file);
@@ -35,16 +37,7 @@ export const createStartup=async(startup)=>{
 
 
 
-export const getFounderStartup=async(founderId)=>{
-  const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my/startups?founderId=${founderId}`);
-  return res.json()
-}
 
-
-export const getPaidUser=async(email)=>{
-  const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users?email=${email}`);
-  return res.json()
-}
 
 
 
@@ -62,46 +55,10 @@ export const createOpportunity=async(newOpportunityData)=>{
 
 
 
-export const getOpportunities=async()=>{
-    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities`, {
-      cache:'no-store'
-    });
-return res.json()
-}
 
 
 
-export const getUsers=async()=>{
-    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users`, {
-      cache:'no-store'
-    });
-return res.json()
-}
 
-
-export const getStartups=async()=>{
-    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/startups`, {
-      cache:'no-store'
-    });
-return res.json()
-}
-
-
-
-export const getSubscriptions=async()=>{
-    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/subscriptions`, {
-      cache:'no-store'
-    });
-return res.json()
-}
-
-
-export const getFounderOpportunities=async(founderId)=>{
- const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities?founderId=${founderId}`, {
-      cache:'no-store'
-    });
-    return res.json()
-}
 
 
 export const postApplication=async(applicationData)=>{
@@ -119,21 +76,7 @@ export const postApplication=async(applicationData)=>{
 
 
 
-export const getApplication=async(userId)=>{
- const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/applications?userId=${userId}`, {
-      cache:'no-store'
-    });
-    return res.json()
-}
 
-
-
-export const getFounderApplication=async(founderId)=>{
- const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/applications?founderId=${founderId}`, {
-      cache:'no-store'
-    });
-    return res.json()
-}
 
 
 export const updateFounderApplication=async(id, data)=>{
@@ -160,11 +103,12 @@ export const updateUser=async(id, data)=>{
 }
 
 
-export const updateStartup=async(id, data)=>{
+export const updateStartup=async(id, data, token)=>{
  const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/startups/${id}`, {
       method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
+            ...(token && { Authorization: `Bearer ${token}` }),
         },
         body: JSON.stringify(data)
     });
@@ -172,10 +116,7 @@ export const updateStartup=async(id, data)=>{
 }
 
 
-export const getPlanById=async(planId)=>{
- const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/plans?plan_id=${planId}`);
- return res.json()
-}
+
 
 
 export const createSubscription=async(subInfo)=>{

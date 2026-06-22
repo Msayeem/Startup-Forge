@@ -1,5 +1,6 @@
 import ManageUsers from '@/Components/ManageUsers';
-import { getUsers } from '@/lib/api';
+import { getUsers } from '@/lib/api-server';
+
 import React from 'react';
 
 const ManageUsersPage = async() => {

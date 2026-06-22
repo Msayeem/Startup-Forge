@@ -1,4 +1,5 @@
-import { getFounderApplication, getFounderOpportunities, getFounderStartup } from '@/lib/api';
+
+import { getFounderApplication, getFounderOpportunities } from '@/lib/api-server';
 import { getUserSession } from '@/lib/session';
 import React from 'react';
 

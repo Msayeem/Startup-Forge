@@ -11,7 +11,6 @@ const router=useRouter();
 
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
-    console.log(user)
     const pathname = usePathname();
 
     // Helper to check and inject premium styling to active state links

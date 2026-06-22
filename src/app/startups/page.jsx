@@ -1,4 +1,5 @@
-import { getStartups } from '@/lib/api';
+
+import { getStartups } from '@/lib/api-server';
 import Image from 'next/image';
 import React from 'react';
 

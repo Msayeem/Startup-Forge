@@ -1,5 +1,6 @@
 import AdminStartup from '@/Components/AdminStartup';
-import { getStartups } from '@/lib/api';
+import { getStartups } from '@/lib/api-server';
+
 import React from 'react';
 
 const ManageStartups = async() => {

@@ -1,6 +1,7 @@
 import FounderStartup from '@/Components/FounderStartup';
 import ManageStartup from '@/Components/ManageStartup';
-import { getFounderStartup } from '@/lib/api';
+import { getFounderStartup } from '@/lib/api-server';
+
 import { getUserSession } from '@/lib/session';
 import React from 'react';
 

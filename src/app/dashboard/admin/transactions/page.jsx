@@ -1,6 +1,7 @@
 
 import Transactions from '@/Components/Transactions';
-import { getUsers } from '@/lib/api';
+import { getUsers } from '@/lib/api-server';
+
 import React from 'react';
 
 const TransactionsPage = async() => {

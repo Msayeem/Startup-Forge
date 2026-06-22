@@ -1,5 +1,5 @@
 import ApplicationTable from '@/Components/ApplicationTable';
-import { getApplication } from '@/lib/api';
+import { getApplication } from '@/lib/api-server';
 import { getUserSession } from '@/lib/session';
 import React from 'react';
 
