@@ -2,10 +2,13 @@
 import { authClient } from '@/lib/auth-client';
 import { Avatar, Button } from '@heroui/react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { redirect, usePathname, useRouter } from 'next/navigation';
 import React from 'react';
 
 const Nav = () => {
+
+const router=useRouter();
+
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
     console.log(user)
@@ -66,7 +69,7 @@ const Nav = () => {
                                 size="sm"
                                 variant="light"
                                 className="text-xs font-bold text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 rounded-full px-3 h-7 transition-all"
-                                onClick={async () => await authClient.signOut()}
+                                onClick={async () =>{ await authClient.signOut(); router.refresh(); redirect('/login')}}
                             >
                                 Log Out
                             </Button>
