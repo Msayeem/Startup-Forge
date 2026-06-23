@@ -20,6 +20,14 @@ export const auth = betterAuth({
           role: {
               role:"collaborator"
             },
+
+            bio: {
+  bio: "",
+},
+skills: {
+  skills: "",
+},
+    
             
               plan:{
 default:'collaborator_free'

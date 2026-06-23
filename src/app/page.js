@@ -1,12 +1,12 @@
-import { getUserSession } from "@/lib/session";
-import Image from "next/image";
+import Banner from '@/Components/Banner';
+import React from 'react';
 
-export default async function Home() {
-  const user=await getUserSession();
-
+const Home = () => {
   return (
- <div>
-  
- </div>
+    <div>
+      <Banner></Banner>
+    </div>
   );
-}
+};
+
+export default Home;
