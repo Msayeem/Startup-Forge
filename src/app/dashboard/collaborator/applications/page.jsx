@@ -7,6 +7,7 @@ const CoolabratorApplications = async() => {
 
 const user=await getUserSession();
 const application=await getApplication(user?.id);
+console.log(application)
 
 
     return (

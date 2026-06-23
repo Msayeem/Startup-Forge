@@ -28,22 +28,7 @@ const PlansPage = () => {
  
 
     const founderPlans = [
-        {
-            name: 'Free',
-            id: 'founder_free',
-            price: '$0',
-            period: '/forever',
-            description: 'Ideal baseline solution matching startups launching their initial hiring infrastructure pipeline.',
-            icon: <Briefcase className="w-5 h-5 text-zinc-400" />,
-            features: [
-                'Up to 3 active job posts simultaneously',
-                'Basic applicant management pipeline',
-                'Standard organic listing search visibility',
-                'Great for a startup’s first year of hiring'
-            ],
-            cta: 'Start Free Posting',
-            popular: false
-        },
+  
         {
             name: 'Growth',
             id: 'founder_growth',
@@ -136,7 +121,7 @@ const PlansPage = () => {
                 </div>
 
                 {/* 3-Tier Pricing Cards Grid Layout Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-24">
                     {founderPlans.map((plan, idx) => (
                         <div
                             key={idx}

@@ -1,4 +1,5 @@
 
+import FounderChart from '@/Components/FounderChart';
 import { getFounderApplication, getFounderOpportunities } from '@/lib/api-server';
 import { getUserSession } from '@/lib/session';
 import React from 'react';
@@ -14,6 +15,12 @@ const applications=await getFounderApplication(user.id);
 const acceptedCount=applications.filter(app=>app.status=='approved').length;
 
 
+const chartData = [
+  { name: 'Opportunities',  value: opportunities.length, color: '#f59e0b' },
+  { name: 'Applications',   value: applications.length,  color: '#6366f1' },
+  { name: 'Accepted',       value: acceptedCount,         color: '#10b981' },
+];
+
 
     return (
     <div className="relative w-full max-w-6xl mx-auto p-8 rounded-3xl bg-[#090a0f] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
@@ -23,6 +30,7 @@ const acceptedCount=applications.filter(app=>app.status=='approved').length;
   <div className="absolute bottom-[-20%] left-[30%] w-[40%] h-[50%] bg-indigo-500/15 rounded-full blur-[120px] pointer-events-none" />
   <div className="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
 
+ <div className="relative z-10 flex flex-col gap-6">
   {/* Content Grid */}
   <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 w-full z-10">
     
@@ -79,6 +87,10 @@ const acceptedCount=applications.filter(app=>app.status=='approved').length;
     </div>
 
   </div>
+
+ <FounderChart data={chartData} />
+
+    </div>
 </div>
     );
 };

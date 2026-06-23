@@ -19,7 +19,7 @@ const Sidebar = async() => {
         { icon: House, href: "/dashboard/collaborator", label: "Dashboard" },
         { icon: Magnifier, href: "/opportunities", label: "Opportunities" },
         { icon: FileText, href: "/dashboard/collaborator/applications", label: "Applications" },
-        { icon: Person, href: "/settings", label: "Profile" },
+        { icon: Person, href: "/profile", label: "Profile" },
     ];
 
     const adminNavLinks = [
