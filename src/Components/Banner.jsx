@@ -1,11 +1,13 @@
-
 import React from 'react';
 import { ArrowRight, Flame, Layers, Users2 } from 'lucide-react';
 import Link from 'next/link';
+import FadeIn from './FadeIn';
 
 export default function Banner() {
     return (
-        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 my-8 antialiased">
+        // FIXED: Added 'overflow-hidden' to the parent wrapper so absolute glow orbs cannot expand the viewport on mobile devices
+        <FadeIn>
+            <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 my-8 antialiased overflow-hidden">
             
             {/* Hyper-Amplified Liquid Ambient Backdrops */}
             <div className="absolute top-[-20%] left-[10%] w-[500px] h-[400px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none mix-blend-screen opacity-80" />
@@ -40,7 +42,7 @@ export default function Banner() {
                         </h2>
 
                         {/* Structural Subtitle */}
-                        <p className="text-sm sm:text-base text-slate-400  max-w-xl leading-relaxed">
+                        <p className="text-sm sm:text-base text-slate-400 max-w-xl leading-relaxed">
                             StartupForge bridges the gap between vision and execution. Publish raw concepts, anchor mission-critical collaborator networks, and recruit elite engineers, designers, and growth builders to forge ideas into scalable enterprises.
                         </p>
 
@@ -79,9 +81,10 @@ export default function Banner() {
                         </div>
 
                         {/* Large Full-Width Interactive Status Bar */}
-                        <div className="col-span-2 p-4 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/10 flex items-center justify-between gap-4">
+                        {/* FIXED: Added flex-wrap and responsive text layout adjustments to stop the engine badge from overflowing on narrow mobile devices */}
+                        <div className="col-span-2 p-4 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
                             <div className="flex items-center gap-3">
-                                <span className="relative flex h-2 w-2">
+                                <span className="relative flex h-2 w-2 shrink-0">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
                                 </span>
@@ -89,7 +92,7 @@ export default function Banner() {
                                     Syndicate Matching System Engine Active
                                 </span>
                             </div>
-                            <span className="text-[10px] font-mono font-bold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">
+                            <span className="text-[10px] font-mono font-bold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20 shrink-0 self-end sm:self-auto">
                                 v2.4
                             </span>
                         </div>
@@ -98,5 +101,6 @@ export default function Banner() {
                 </div>
             </div>
         </div>
+        </FadeIn>
     );
 }

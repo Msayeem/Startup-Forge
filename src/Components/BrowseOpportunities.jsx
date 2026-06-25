@@ -2,7 +2,7 @@ import { CircleDollar } from '@gravity-ui/icons';
 // Added Link to HeroUI imports
 import { Card, Link } from '@heroui/react';
 // Renamed the Lucide 'Link' to 'LinkIcon' to avoid conflicts
-import { ArrowRight, Briefcase, Link as LinkIcon, MapPin } from 'lucide-react';
+import { ArrowRight, Factory, Briefcase, Link as LinkIcon, MapPin } from 'lucide-react';
 import React from 'react';
 
 const BrowseOpportunities = ({opportunities}) => {
@@ -61,7 +61,7 @@ console.log(opportunities)
     <div className="flex flex-wrap gap-2">
       {opportunities.industry && (
         <div className="flex items-center gap-2 bg-white/[0.04] px-4 py-1.5 rounded-full border border-white/[0.08] shadow-sm">
-          <Briefcase className="text-indigo-400 w-3.5 h-3.5 filter drop-shadow-[0_2px_8px_rgba(99,102,241,0.3)]" />
+          <Factory className="text-indigo-400 w-3.5 h-3.5 filter drop-shadow-[0_2px_8px_rgba(99,102,241,0.3)]" />
           <span className="text-xs font-semibold text-slate-200 capitalize tracking-wide">
             {opportunities.industry}
           </span>

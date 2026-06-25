@@ -1,4 +1,5 @@
 import BrowseOpportunities from '@/Components/BrowseOpportunities';
+import FadeIn from '@/Components/FadeIn';
 import OpportunitiesClient from '@/Components/OpportunitiesClient';
 import { getOpportunities } from '@/lib/api-server';
 
@@ -9,7 +10,8 @@ const OpportunitiesPage = async() => {
 const opportunitiess=await getOpportunities()
 
     return (
-      <div className="relative min-h-screen w-full bg-[#05060b] text-white p-6 md:p-12 overflow-hidden antialiased">
+   <FadeIn>
+       <div className="relative min-h-screen w-full bg-[#05060b] text-white p-6 md:p-12 overflow-hidden antialiased">
             
             {/* Highly Visible & Dynamic Ambient Background Glows */}
             <div className="absolute top-[-5%] right-[-5%] w-[600px] h-[600px] bg-indigo-500/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen opacity-80" />
@@ -31,6 +33,7 @@ const opportunitiess=await getOpportunities()
 
             
         </div>
+   </FadeIn>
     );
 };
 

@@ -1,4 +1,5 @@
 
+import FadeIn from '@/Components/FadeIn';
 import FounderChart from '@/Components/FounderChart';
 import { getFounderApplication, getFounderOpportunities } from '@/lib/api-server';
 import { getUserSession } from '@/lib/session';
@@ -23,7 +24,8 @@ const chartData = [
 
 
     return (
-    <div className="relative w-full max-w-6xl mx-auto p-8 rounded-3xl bg-[#090a0f] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+   <FadeIn>
+     <div className="relative w-full max-w-6xl mx-auto p-8 rounded-3xl bg-[#090a0f] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
   
   {/* Liquid Ambient Light Orbs (Glow effects behind the glass) */}
   <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[60%] bg-amber-500/15 rounded-full blur-[120px] pointer-events-none" />
@@ -92,6 +94,7 @@ const chartData = [
 
     </div>
 </div>
+   </FadeIn>
     );
 };
 

@@ -1,4 +1,5 @@
 
+import FadeIn from '@/Components/FadeIn';
 import { getStartups } from '@/lib/api-server';
 import Image from 'next/image';
 import React from 'react';
@@ -8,7 +9,8 @@ const StartupsPage = async () => {
 
     return (
         // Enhanced background depth with a subtle dark noise/mesh-like gradient foundation
-        <div className="relative min-h-screen w-full bg-gradient-to-b from-[#0b0d19] via-[#070810] to-[#030408] text-white p-6 md:p-12 overflow-hidden antialiased">
+      <FadeIn>
+          <div className="relative min-h-screen w-full bg-gradient-to-b from-[#0b0d19] via-[#070810] to-[#030408] text-white p-6 md:p-12 overflow-hidden antialiased">
             
             {/* Highly Visible & Amplified Ambient Liquid Glows */}
             <div className="absolute top-[-5%] left-[-5%] w-[600px] h-[600px] bg-indigo-500/25 rounded-full blur-[100px] pointer-events-none mix-blend-screen opacity-80" />
@@ -96,6 +98,7 @@ const StartupsPage = async () => {
                 </div>
             </div>
         </div>
+      </FadeIn>
     );
 };
 

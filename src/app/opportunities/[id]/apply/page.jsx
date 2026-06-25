@@ -16,7 +16,7 @@ const token=await getUserToken();
     })
 const opportunity=await res.json();
 
-console.log(opportunity)
+
 
     return (
         <div>

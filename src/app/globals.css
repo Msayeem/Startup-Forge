@@ -1,2 +1,6 @@
 @import "tailwindcss";
 @import "@heroui/styles"; 
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

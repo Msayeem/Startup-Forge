@@ -3,12 +3,14 @@ import { postApplication } from '@/lib/api';
 import { LayoutHeaderCells } from '@gravity-ui/icons';
 import { Button, Description, FieldError, Form, Input, Label, TextField } from '@heroui/react';
 import { ArrowRight, FileText, Link } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 
 const ApplyForm = ({opportunity, user}) => {
 
-    console.log(opportunity)
+   const router=useRouter();
 
     const [formData, setFormData] = useState({
         resumeLink: '',
@@ -51,8 +53,9 @@ const ApplyForm = ({opportunity, user}) => {
             if (res?.insertedId) {
                toast.success('Applied successfully!')
                 setFormData({ resumeLink: '', portfolioLink: '', additionalNotes: '' });
+            router.push('/opportunities')
             } else {
-                alert('Something went wrong. Please try again.');
+                toast.error('Something went wrong. Please try again.');
             }
         } catch (error) {
             console.error('Submission Error:', error);

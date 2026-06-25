@@ -5,16 +5,17 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#030408] text-slate-300 overflow-hidden border-t border-white/[0.05]">
+    // CHANGED: Shifted from an semi-transparent black to a distinct, rich charcoal slate (#0e1017)
+    // CHANGED: Upgraded the top border to a visible, structural gray (border-zinc-800) to clearly divide the page content
+    <footer className="relative bg-[#0e1017] text-slate-300 overflow-hidden border-t border-zinc-800/90">
       
-      {/* Top Ambient Fluid Reflection Strip */}
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-indigo-500/40 to-transparent" />
+      {/* Top Accent Neon Highlight Line - Gives a sleek edge contrast directly over your black page theme */}
+      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-indigo-700/100 to-transparent" />
 
-      {/* Deep Liquid Plasma Glow Orbs */}
-      <div className="pointer-events-none absolute -bottom-20 left-1/2 -translate-x-1/2 w-[800px] h-[350px] rounded-full bg-gradient-to-t from-indigo-600/10 to-purple-600/5 blur-[120px] mix-blend-screen" />
-      <div className="pointer-events-none absolute -top-40 right-10 w-[300px] h-[300px] bg-white/[0.01] rounded-full blur-3xl" />
+      {/* Internal Glow Orbs - Kept subtle so they add ambiance without washing out the new background color */}
+      <div className="pointer-events-none absolute -bottom-20 left-1/2 -translate-x-1/2 w-[800px] h-[350px] rounded-full bg-gradient-to-t from-indigo-500/10 to-transparent blur-[120px] mix-blend-screen" />
 
-      {/* Liquid Glass Sub-Panel for Structure */}
+      {/* Main Content Sub-Panel */}
       <div className="relative z-10 mx-auto max-w-6xl px-6 sm:px-8 pt-20 pb-10">
         
         {/* Top Section: Brand Block Left, Nav Block Right */}
@@ -27,8 +28,8 @@ const Footer = () => {
                 <Sparkles className="w-4 h-4 stroke-[2]" />
               </div>
               <h1 className="text-lg font-black tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent group-hover:via-white transition-all duration-300">
-                        Startup<span className="text-indigo-400 font-medium">Forge</span>
-                    </h1>
+                Startup<span className="text-indigo-400 font-medium">Forge</span>
+              </h1>
             </Link>
 
             <p className="text-sm leading-relaxed text-slate-400 max-w-sm">
@@ -46,48 +47,31 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Nav Columns Layered into Glass Cards */}
+          {/* Nav Columns */}
           <div className="grid grid-cols-2 gap-x-12 sm:gap-x-20 gap-y-10 shrink-0">
             <div>
               <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-400 mb-6">
-                Company
+                Contact
               </h3>
               <ul className="flex flex-col gap-4">
-                {["About", "Contact", "Careers", "Blog"].map((item) => (
-                  <li key={item}>
-                    <Link
-                      href="#"
-                      className="text-sm font-light text-slate-400 hover:text-white transition-colors duration-200"
+              <li>  <Link
+                      href="mailto:msayeem223@gmail.com"
+                      className="text-sm  text-slate-400 hover:text-white transition-colors duration-200"
                     >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                      Email : msayeem223@gmail.com
+                    </Link></li>
+              <li><p className="text-sm  text-slate-400 hover:text-white transition-colors duration-200">Phone : +8801937596850</p>
+              </li>
+              <li></li>
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-400 mb-6">
-                Platform
-              </h3>
-              <ul className="flex flex-col gap-4">
-                {["List a Facility", "How it works", "Pricing", "Help Centre"].map((item) => (
-                  <li key={item}>
-                    <Link
-                      href="#"
-                      className="text-sm font-light text-slate-400 hover:text-white transition-colors duration-200"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+         
           </div>
         </div>
 
-        {/* Fine Glass Divider Grid-line */}
-        <div className="h-px w-full bg-gradient-to-r from-white/[0.01] via-white/[0.06] to-white/[0.01] mb-8" />
+        {/* Interior Inner Divider Line */}
+        <div className="h-px w-full bg-zinc-800/60 mb-8" />
 
         {/* Bottom Metadata & Legal Actions */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
@@ -96,19 +80,19 @@ const Footer = () => {
             © {new Date().getFullYear()} StartupForge. Operating across decentralized frameworks.
           </p>
 
-          {/* Liquid Glass Social Icons */}
+          {/* Social Icons */}
           <div className="flex items-center gap-2.5 order-1 sm:order-2">
             <Link
               href="https://www.linkedin.com/in/sayem-dev/"
               aria-label="LinkedIn"
-              className="flex items-center justify-center w-9 h-9 rounded-xl bg-white/[0.02] border border-white/[0.06] text-slate-400 hover:text-indigo-400 hover:border-indigo-500/40 hover:bg-indigo-500/[0.04] transition-all duration-200 shadow-inner"
+              className="flex items-center justify-center w-9 h-9 rounded-xl bg-white/[0.02] border border-zinc-800 text-slate-400 hover:text-indigo-400 hover:border-indigo-500/40 hover:bg-indigo-500/[0.04] transition-all duration-200 shadow-inner"
             >
               <FaLinkedin size={14} />
             </Link>
             <Link
               href="https://github.com/Msayeem"
               aria-label="GitHub"
-              className="flex items-center justify-center w-9 h-9 rounded-xl bg-white/[0.02] border border-white/[0.06] text-slate-400 hover:text-indigo-400 hover:border-indigo-500/40 hover:bg-indigo-500/[0.04] transition-all duration-200 shadow-inner"
+              className="flex items-center justify-center w-9 h-9 rounded-xl bg-white/[0.02] border border-zinc-800 text-slate-400 hover:text-indigo-400 hover:border-indigo-500/40 hover:bg-indigo-500/[0.04] transition-all duration-200 shadow-inner"
             >
               <FaGithub size={14} />
             </Link>
@@ -116,11 +100,11 @@ const Footer = () => {
 
           {/* Legal Compliance Block */}
           <div className="flex items-center gap-1.5 order-3">
-            <Link href="#" className="text-xs font-light text-slate-500 hover:text-slate-300 transition-colors duration-200 px-2 py-1">
+            <Link href="#" className="text-xs  text-slate-500 hover:text-slate-300 transition-colors duration-200 px-2 py-1">
               Privacy Node
             </Link>
             <span className="text-slate-700 text-xs font-light">·</span>
-            <Link href="#" className="text-xs font-light text-slate-500 hover:text-slate-300 transition-colors duration-200 px-2 py-1">
+            <Link href="#" className="text-xs  text-slate-500 hover:text-slate-300 transition-colors duration-200 px-2 py-1">
               Terms of Protocol
             </Link>
           </div>

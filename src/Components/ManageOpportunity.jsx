@@ -122,7 +122,7 @@ const result=await res.json()
                     </h1>
                 </div>
 
-            <div className='flex items-center justify-between'>
+            <div className='flex items-center justify-between gap-5'>
                 <AlertDialog>
                   <Button variant="danger">Delete Opportunity</Button>
                   <AlertDialog.Backdrop>
@@ -164,13 +164,13 @@ const result=await res.json()
                 <Modal.Heading>Update Startup</Modal.Heading>
              
               </Modal.Header>
-              <Modal.Body className="p-6 overflow-y-auto max-h-[70vh]">
+              <Modal.Body className="p-6 sm:p-6 overflow-y-auto max-h-[70vh]">
                 <Surface variant="default">
                   
-                  <Form onSubmit={handleSubmit} className="space-y-8" validationErrors={errors} validationBehavior='aria'>
+                  <Form onSubmit={handleSubmit} className="space-y-4 sm:space-y-8" validationErrors={errors} validationBehavior='aria'>
 
                         {/* SECTION 1: Job Information */}
-                        <Fieldset className="space-y-6 w-full">
+                        <Fieldset className="space-y-4 sm:space-y-6 w-full">
                             <legend className="text-lg font-medium text-zinc-300 border-b border-zinc-900 w-full pb-2 mb-2">
                                 Opportunity Information
                             </legend>

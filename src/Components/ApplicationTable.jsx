@@ -48,17 +48,13 @@ console.log(application)
     Applications ({application.length})
   </h2>
 
-  <Table
-    className="w-full"
-    classNames={{
-      base: "bg-transparent",
-      table: "border-collapse",
-      thead: "[&>tr]:border-b [&>tr]:border-zinc-200 dark:[&>tr]:border-zinc-800/60",
-      th: "bg-transparent text-zinc-500 dark:text-zinc-400 font-medium text-sm py-4 border-b border-zinc-200 dark:border-zinc-800/60 first:pl-4 last:pr-4",
-      tr: "border-b border-zinc-100 dark:border-zinc-800/40 hover:bg-zinc-50 dark:hover:bg-zinc-900/40 transition-colors last:border-none",
-      td: "py-4 align-middle first:pl-4 last:pr-4 text-zinc-700 dark:text-zinc-300 text-sm"
-    }}
-  >
+<Table
+  className="w-full bg-transparent border-collapse
+    [&_thead>tr]:border-b [&_thead>tr]:border-zinc-200 dark:[&_thead>tr]:border-zinc-800/60
+    [&_th]:bg-transparent [&_th]:text-zinc-500 dark:[&_th]:text-zinc-400 [&_th]:font-medium [&_th]:text-sm [&_th]:py-4 [&_th]:border-b [&_th]:border-zinc-200 dark:[&_th]:border-zinc-800/60 [&_th]:first:pl-4 [&_th]:last:pr-4
+    [&_tr]:border-b [&_tr]:border-zinc-100 dark:[&_tr]:border-zinc-800/40 [&_tr]:hover:bg-zinc-50 dark:[&_tr]:hover:bg-zinc-900/40 [&_tr]:transition-colors [&_tr]:last:border-none
+    [&_td]:py-4 [&_td]:align-middle [&_td]:first:pl-4 [&_td]:last:pr-4 [&_td]:text-zinc-700 dark:[&_td]:text-zinc-300 [&_td]:text-sm"
+>
     <Table.ScrollContainer>
       <Table.Content aria-label="Job applications tracking table">
         <Table.Header>
@@ -82,9 +78,7 @@ console.log(application)
                     <span className="font-medium text-zinc-900 dark:text-zinc-100 text-[15px]">
                       {app.opportunityName}
                     </span>
-                    <span className="text-xs text-zinc-400 dark:text-zinc-500 font-normal">
-                      {app.opportunityName}
-                    </span>
+                  
                   </div>
                 </Table.Cell>
 

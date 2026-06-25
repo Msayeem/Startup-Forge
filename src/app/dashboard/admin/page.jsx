@@ -1,4 +1,5 @@
 import AdminChart from '@/Components/AdminChart';
+import FadeIn from '@/Components/FadeIn';
 import RevenueChart from '@/Components/RevenueChart';
 import { getOpportunities, getStartups, getUsers } from '@/lib/api-server';
 import React from 'react';
@@ -20,7 +21,8 @@ const AdminPage = async () => {
   ];
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto p-8 rounded-3xl bg-[#090a0f] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+   <FadeIn>
+     <div className="relative w-full max-w-6xl mx-auto p-8 rounded-3xl bg-[#090a0f] overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
 
       {/* Ambient Glow Orbs */}
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[60%] bg-amber-500/15 rounded-full blur-[120px] pointer-events-none" />
@@ -106,6 +108,7 @@ const AdminPage = async () => {
 
       </div>
     </div>
+   </FadeIn>
   );
 };
 

@@ -25,9 +25,9 @@ router.refresh()
     const getStatusDetails = (status) => {
         switch (status?.toLowerCase()) {
             case 'active':
-                return { color: 'text-emerald-500', label: 'Approved' };
+                return { color: 'text-emerald-500', label: 'Active' };
             case 'block':
-                return { color: 'text-rose-500', label: 'Rejected' };
+                return { color: 'text-rose-500', label: 'Blocked' };
           
         }
     };
