@@ -52,6 +52,7 @@ const NewOpportunityForm = ({ startup }) => {
             opportunityName: startup.startup_name,
             companyLogo: startup.logo_url,
             founderId:startup.founderId,
+            industry:startup.industry,
             status: "active",
             isPubliclyVisible: true,
         };
@@ -110,13 +111,13 @@ const NewOpportunityForm = ({ startup }) => {
                             </legend>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <TextField name="roleTitle" isInvalid={!!errors.roleTitle} className="flex flex-col gap-1 w-full">
+                                <TextField isRequired name="roleTitle" isInvalid={!!errors.roleTitle} className="flex flex-col gap-1 w-full">
                                     <Label className="text-zinc-400 font-medium text-sm">Role Title</Label>
                                     <Input placeholder="e.g. Senior Frontend Engineer" className={textInputClass} />
                                     {errors.roleTitle && <FieldError className="text-xs text-danger mt-1">{errors.roleTitle}</FieldError>}
                                 </TextField>
 
-                                <Select className={selectBoxClass} name="commitmentLevel" isInvalid={!!errors.commitmentLevel}>
+                                <Select isRequired className={selectBoxClass} name="commitmentLevel" isInvalid={!!errors.commitmentLevel}>
                                     <Label className="text-zinc-400 font-medium text-sm mb-1 block">Commitment Level</Label>
                                     <Select.Trigger className={triggerClasses}>
                                         <Select.Value className="text-white placeholder:text-zinc-600" />
@@ -153,7 +154,7 @@ const NewOpportunityForm = ({ startup }) => {
 
 
                                         {/* Updated Switch using v3 Compound Component Syntax */}
-                                        <Select className={selectBoxClass} name="workType" isInvalid={!!errors.workType}>
+                                        <Select isRequired className={selectBoxClass} name="workType" isInvalid={!!errors.workType}>
                                             <Label className="text-zinc-400 font-medium text-sm mb-1 block">Work Type</Label>
                                             <Select.Trigger className={triggerClasses}>
                                                 <Select.Value className="text-white placeholder:text-zinc-600" />
@@ -181,7 +182,7 @@ const NewOpportunityForm = ({ startup }) => {
 
                                 </div>
 
-                                <TextField name="deadline" isInvalid={!!errors.deadline} className="flex flex-col gap-1 w-full">
+                                <TextField isRequired name="deadline" isInvalid={!!errors.deadline} className="flex flex-col gap-1 w-full">
                                     <Label className="text-zinc-400 font-medium text-sm">Deadline</Label>
                                     <Input type="date" className={textInputClass} />
                                     {errors.deadline && <FieldError className="text-xs text-danger mt-1">{errors.deadline}</FieldError>}
@@ -195,7 +196,7 @@ const NewOpportunityForm = ({ startup }) => {
 
 
 
-                            <TextField name="requirements" isInvalid={!!errors.requirements} className="flex flex-col gap-1 w-full">
+                            <TextField isRequired name="requirements" isInvalid={!!errors.requirements} className="flex flex-col gap-1 w-full">
                                 <Label className="text-zinc-400 font-medium text-sm">Requirements</Label>
                                 <TextArea
                                     placeholder="List required experience, skills, and certifications..."

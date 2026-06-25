@@ -278,7 +278,7 @@ const onSubmit = async (e) => {
 
    <Modal.Footer>
                 <Button slot="close" variant="secondary">Cancel</Button>
-                <Button type="submit">Create Company</Button>
+                <Button type="submit">Create Startup</Button>
               </Modal.Footer>
                   </form>
                 </Surface>

@@ -8,6 +8,8 @@ import toast from 'react-hot-toast';
 
 const ApplyForm = ({opportunity, user}) => {
 
+    console.log(opportunity)
+
     const [formData, setFormData] = useState({
         resumeLink: '',
         portfolioLink: '',

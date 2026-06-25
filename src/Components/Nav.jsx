@@ -2,6 +2,7 @@
 import { authClient } from '@/lib/auth-client';
 import { Button } from '@heroui/react';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { redirect, usePathname, useRouter } from 'next/navigation';
 import React, { useState } from 'react';
@@ -25,7 +26,7 @@ const Nav = () => {
 
                 {/* Logo */}
                 <Link href="/" className="relative z-10 flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
-                    <div className="w-2.5 h-2.5 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,0.6)] group-hover:scale-110 transition-transform" />
+                   
                     <h1 className="text-lg font-black tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent group-hover:via-white transition-all duration-300">
                         Startup<span className="text-indigo-400 font-medium">Forge</span>
                     </h1>
@@ -62,11 +63,14 @@ const Nav = () => {
                             </span>
                         <Link href={'/profile'}>
                           <div className="relative w-7 h-7 rounded-full p-[1px] bg-gradient-to-b from-white/30 to-white/10 shadow-md overflow-hidden shrink-0">
-                                <img 
+                                <Image
                                     className="w-full h-full rounded-full object-cover"
                                     src={user.image}
                                     alt={user.name}
-                                />
+                                    width={50}
+                                    height={50}
+                                >
+                                    </Image>
                             </div>
                         </Link>
                             <Button 

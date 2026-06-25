@@ -58,10 +58,21 @@ console.log(opportunities)
       )}
     </div>
 
+    <div className="flex flex-wrap gap-2">
+      {opportunities.industry && (
+        <div className="flex items-center gap-2 bg-white/[0.04] px-4 py-1.5 rounded-full border border-white/[0.08] shadow-sm">
+          <Briefcase className="text-indigo-400 w-3.5 h-3.5 filter drop-shadow-[0_2px_8px_rgba(99,102,241,0.3)]" />
+          <span className="text-xs font-semibold text-slate-200 capitalize tracking-wide">
+            {opportunities.industry}
+          </span>
+        </div>
+      )}
+    </div>
+
     {/* Supplemental Requirements Block */}
     {opportunities.requirements && (
       <div className="text-xs text-slate-300 space-y-1.5 border-t border-white/[0.06] pt-4">
-        <p className="leading-relaxed font-light antialiased">
+        <p className="leading-relaxed antialiased">
           <strong className="text-slate-400 font-bold tracking-wider uppercase text-[10px] block mb-0.5">Requirements:</strong>{' '}
           {opportunities.requirements}
         </p>
