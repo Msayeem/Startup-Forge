@@ -5,6 +5,7 @@ export const getFounderStartup=async(founderId)=>{
   const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my/startups?founderId=${founderId}`,{
        headers: {
       ...(token && { Authorization: `Bearer ${token}` }),
+
     },
   });
   return res.json()
@@ -12,14 +13,18 @@ export const getFounderStartup=async(founderId)=>{
 
 
 
-export const getOpportunities=async()=>{
-    
-    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities`, {
-      cache:'no-store',
-    
+export const getOpportunities = async () => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/opportunities`, {
+      cache: 'no-store',
     });
-return res.json()
-}
+    if (!res.ok) return [];
+    return res.json();
+  } catch (err) {
+    console.error('getOpportunities failed:', err.message);
+    return [];
+  }
+};
 
 
 
@@ -35,14 +40,18 @@ return res.json()
 }
 
 
-export const getStartups=async()=>{
-
-    const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/startups`, {
-      cache:'no-store',
-   
+export const getStartups = async () => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/startups`, {
+      cache: 'no-store',
     });
-return res.json()
-}
+    if (!res.ok) return [];
+    return res.json();
+  } catch (err) {
+    console.error('getStartups failed:', err.message);
+    return [];
+  }
+};
 
 
 
