@@ -19,7 +19,7 @@ const handleDelete=async()=>{
     });
 
     const result=await res.json();
-    toast.error('Startup deleted.');
+    toast.error('Opportunity deleted.');
     router.refresh()
 }
 
